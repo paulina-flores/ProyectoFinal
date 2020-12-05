@@ -1,17 +1,17 @@
-import java.io.*;
+
 import java.util.*;
 class Persona implements Serializable{
 
-   protected String usuario, contraseña, tipo;
+   protected String usuario, contraseé™, tipo;
    protected Nombre nombre;
    protected Direccion direccion;
    protected Fecha fecha;
    protected String nacionalidad;
    
-   public Persona(String tipo, String usuario, String contraseña, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad){
+   public Persona(String tipo, String usuario, String contraseé™, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad){
       setTipo(tipo);
       setUsuario(usuario);
-      setContraseña(contraseña);
+      setContraseé™(contraseé™);
       setNombre(nombre);
       setDireccion(direccion);
       setFecha(fecha);
@@ -26,8 +26,8 @@ class Persona implements Serializable{
       this.usuario = usuario;
    }
    
-   public void setContraseña(String contraseña){
-      this.contraseña = contraseña;
+   public void setContraseé™(String contraseé™){
+      this.contraseé™ = contraseé™;
    }
    
    public void setNombre(Nombre nombre){
@@ -54,8 +54,8 @@ class Persona implements Serializable{
       return usuario;
    }
    
-   public String getContraseña(){
-      return contraseña;
+   public String getContraseé™(){
+      return contraseé™;
    }
    
    public Nombre getNombre(){
@@ -214,8 +214,8 @@ class Entrenador extends Persona implements Serializable{
 
    private String idEntrenador;
    
-   public Entrenador(String tipo, String usuario, String contraseña, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad, String idEntrenador){
-      super(tipo, usuario, contraseña, nombre, direccion, fecha, nacionalidad);
+   public Entrenador(String tipo, String usuario, String contraseé™, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad, String idEntrenador){
+      super(tipo, usuario, contraseé™, nombre, direccion, fecha, nacionalidad);
       setidEntrenador(idEntrenador);
    }
    
@@ -238,8 +238,8 @@ class Atleta extends Persona implements Serializable{
    private HashMap<String, ArrayList<String>> pruebaMarca = new HashMap<String, ArrayList<String>>();
    private String categoria, Entrenador;
    
-   public Atleta(String tipo, String usuario, String contraseña, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad, HashMap<String, ArrayList<String>> pruebaMarca, String categoria, String Entrenador){
-      super(tipo, usuario, contraseña, nombre, direccion, fecha, nacionalidad);
+   public Atleta(String tipo, String usuario, String contraseé™, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad, HashMap<String, ArrayList<String>> pruebaMarca, String categoria, String Entrenador){
+      super(tipo, usuario, contraseé™, nombre, direccion, fecha, nacionalidad);
       setPruebaMarca(pruebaMarca);
       setCategoria(categoria);
       setEntrenador(Entrenador);
@@ -299,7 +299,7 @@ class Principal implements Serializable{
    
    public static int elegirCuenta(){
       Scanner s = new Scanner(System.in);
-      System.out.println("      ¡Bienvenido!\n\nIngresa la opcion deseada:\n\n(1)Crear Cuenta\n(2)Ingresar\n");
+      System.out.println("      ã€ienvenido!\n\nIngresa la opcion deseada:\n\n(1)Crear Cuenta\n(2)Ingresar\n");
       boolean salir = true;
       int opcion = 0;
       do{
@@ -338,7 +338,7 @@ class Principal implements Serializable{
          }
       System.out.println();
       }while(salir);
-      String usuario = "", contraseña = "", nombre = "", ap = "", am = "", calle = "", numeroInt = "", ciudad = "", estado = "", aa = "", dd = "", mm = "", nacionalidad = "", pruebas = "", marcas = "", categoria = "";
+      String usuario = "", contraseé™ = "", nombre = "", ap = "", am = "", calle = "", numeroInt = "", ciudad = "", estado = "", aa = "", dd = "", mm = "", nacionalidad = "", pruebas = "", marcas = "", categoria = "";
       FileOutputStream f1 = null;
       ObjectOutputStream f2 = null;
       switch(opcion){
@@ -349,7 +349,7 @@ class Principal implements Serializable{
                System.out.print("Usuario: ");
                usuario = s.next();
                System.out.print("Contrasena: ");
-               contraseña = s.next();
+               contraseé™ = s.next();
                System.out.print("Nombre: ");
                nombre = x.nextLine();
                System.out.print("Apellido Paterno: ");
@@ -378,7 +378,7 @@ class Principal implements Serializable{
                Nombre nombre1 = new Nombre(nombre, ap, am);
                Direccion direccion1 = new Direccion(calle, numeroInt, ciudad, estado);
                Fecha fecha1 = new Fecha(dd, mm, aa);
-               Entrenador entrenador1 = new Entrenador("entrenador", usuario, contraseña, nombre1, direccion1, fecha1, nacionalidad, "589783");
+               Entrenador entrenador1 = new Entrenador("entrenador", usuario, contraseé™, nombre1, direccion1, fecha1, nacionalidad, "589783");
                f1 = new FileOutputStream("C:\\Users\\emili\\OneDrive\\Documents\\PROGRAMACION INTERMEDIA\\PROYECTO\\" + usuario + ".dat");
                f2 = new ObjectOutputStream(f1);
                f2.writeObject(entrenador1);
@@ -396,7 +396,7 @@ class Principal implements Serializable{
                System.out.print("Usuario: ");
                usuario = s.next();
                System.out.print("Contrasena: ");
-               contraseña = s.next();
+               contraseé™ = s.next();
                System.out.print("Nombre: ");
                nombre = x.nextLine();
                System.out.print("Apellido Paterno: ");
@@ -442,7 +442,7 @@ class Principal implements Serializable{
                      System.out.print("Ingresa una marca: ");
                      String y = s.next();
                      marca.add(y);
-                     System.out.println("¿Quieres ingresar otra marca?\n(1) Si\n(2)No");
+                     System.out.println("ç†¹uieres ingresar otra marca?\n(1) Si\n(2)No");
                      opcion1 = x.nextLine();
                      if(!opcion1.equals("1"))
                         salir2 = false;
@@ -450,7 +450,7 @@ class Principal implements Serializable{
                   
                   tabla.put(prueba, marca);       
                   
-                  System.out.println("¿Quieres ingresar otra prueba?\n(1) Si\n(2)No");
+                  System.out.println("ç†¹uieres ingresar otra prueba?\n(1) Si\n(2)No");
                   opcion1 = x.nextLine();
                   if(!opcion1.equals("1"))
                      salir1 = false;
@@ -458,7 +458,7 @@ class Principal implements Serializable{
                }
                
                
-               //Empiezo a crear la información del hashmap
+               //Empiezo a crear la informacié® del hashmap
                /*
                String primeraPrueba = "100 metros";
                ArrayList<String> cienmetros  = new ArrayList<String>();
@@ -472,8 +472,8 @@ class Principal implements Serializable{
                tabla.put(primeraPrueba, cienmetros);
                tabla.put(segundaPrueba, doscientosmetros);
                */
-               Atleta atleta1 = new Atleta("atleta", usuario, contraseña, nombre1, direccion1, fecha1, nacionalidad, tabla, categoria, "589783");
-               //String tipo, String usuario, String contraseña, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad, HashMap<String, ArrayList<String>> pruebaMarca, String categoria, String idEntrenador
+               Atleta atleta1 = new Atleta("atleta", usuario, contraseé™, nombre1, direccion1, fecha1, nacionalidad, tabla, categoria, "589783");
+               //String tipo, String usuario, String contraseé™, Nombre nombre, Direccion direccion, Fecha fecha, String nacionalidad, HashMap<String, ArrayList<String>> pruebaMarca, String categoria, String idEntrenador
                //Entrenador entrenador1 = new Entrenador("entrenador", "emi7595", "Soyemiliano1", nombre1, direccion1, fecha1, "Mexicana", "589783");
                f1 = new FileOutputStream("C:\\Users\\emili\\OneDrive\\Documents\\PROGRAMACION INTERMEDIA\\PROYECTO\\" + usuario + ".dat");
                f2 = new ObjectOutputStream(f1);
@@ -554,7 +554,7 @@ class Principal implements Serializable{
             System.out.print("Usuario: ");
             usuario = s.next();
             System.out.print("Contrasena: ");
-            contraseña = s.next();
+            contraseé™ = s.next();
             System.out.print("Nombre: ");
             nombre = s.next();
             System.out.print("Apellido Paterno: ");
